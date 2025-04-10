@@ -1,0 +1,1 @@
+# coreops-go-copshq-hands-on
