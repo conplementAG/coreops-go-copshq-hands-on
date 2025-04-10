@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-notes
+spec:
+  selector:
+    app: azure-notes
+  ports:
+  - port: 80
+    targetPort: httpintern

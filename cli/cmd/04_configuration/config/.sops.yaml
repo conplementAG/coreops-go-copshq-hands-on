@@ -1,0 +1,7 @@
+# azure_keyvault is configured with an ID of the key which should be used to decrypt specified config files.
+# Decryption will work, if the currently logged-in user has access to the specified key. All cops team members have
+# per default access to all configurations.
+creation_rules:
+  - path_regex: ""
+    azure_keyvault: https://workshop-cp-kv.vault.azure.net/keys/SOPS/6daf9fd6121a443ebe0ce86e03a19737
+    encrypted_regex: .*_secret|.*_key

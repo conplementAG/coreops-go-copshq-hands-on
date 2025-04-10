@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-notes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-notes
+  template:
+    metadata:
+      labels:
+        app: azure-notes
+        # azure.workload.identity/use: "true"
+    spec:
+      # serviceAccountName: {{ .Values.WorkloadIdentity.ClientName }}
+      containers:
+      - name: azure-notes
+        image: "{{ .Values.AppImageRepository }}:{{ .Values.AppImageTag }}"
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        resources:
+          requests:
+            cpu: 50m
+            memory: 25Mi
+          limits:
+            cpu: 100m
+            memory: 50Mi
+        ports:
+        - name: httpintern
+          containerPort: 8080
+# ##### workload identity based storage account access
+#         env:
+#           - name: STORAGE_ACCOUNT
+#             value: {{ .Values.StorageAccountName }}
+# ###### client secret based keyvault access
+#         envFrom:
+#           - secretRef:
+#               name: app-iac-secrets
+#         volumeMounts:
+#         - name: secrets-store-inline
+#           mountPath: "/mnt/secrets-store"
+#           readOnly: true
+#       volumes:
+#         - name: secrets-store-inline
+#           csi:
+#             driver: secrets-store.csi.k8s.io
+#             readOnly: true
+#             volumeAttributes:
+#               secretProviderClass: azure-notes-akv-sync
+#             nodePublishSecretRef:
+#               name: secrets-store-creds
+# #####

@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: azure-notes-ingress-coreops-public
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    acme.cert-manager.io/http01-ingress-class: coreops-public
+spec:
+  ingressClassName: coreops-public
+  tls:
+    - hosts:
+      - {{ .Values.Host }}
+      secretName: azure-notes-secret-coreops-public
+  rules:
+    - host: {{ .Values.Host }}
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: azure-notes
+                port:
+                  number: 80

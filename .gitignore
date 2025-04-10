@@ -1,0 +1,7 @@
+*.log
+*.exe
+.generated/
+.plans/
+.terraform/
+.terraform.lock.hcl
+*.tfvars

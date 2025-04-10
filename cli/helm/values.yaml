@@ -1,0 +1,17 @@
+EnvironmentTag: "dka"
+AppImageRepository: "cponeneucopsacr.azurecr.io/cp-notes-dka"
+AppImageTag: "latest"
+Host: "cp-notes.dka.cpone.conplement.cloud"
+#
+StorageAccountName: ""
+KeyVaultSync:
+  ClientId: ""
+  ClientSecret: ""
+  KeyVaultName: ""
+  ResourceGroupName: ""
+  SubscriptionId: ""
+  TenantId: ""
+
+WorkloadIdentity:
+  ClientName: ""
+  ClientId: ""
