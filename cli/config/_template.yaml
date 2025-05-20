@@ -1,11 +1,14 @@
+users: <user_id>
+cluster_connection_string_secret: <cops_connection_string>
+client_secret: <service_principal_secret>
+##
 cluster: cpone
-cluster_connection_string_secret: <your-cluster-connection-string>
-users: <your-users>
 appName: cp-notes
 ## infrastructure
-client_id: 9e490497-2861-4b83-9fb2-9d46585a229f
-client_secret: <client-secret>
 subscription: aee5732d-1f42-49c8-a38d-688bd0f6d146
 tenant: 87144109-3f73-4a26-87b5-8cb7a3c3425e
 region_long: westeurope
 region_short: weu
+## service principal
+client_id: 9e490497-2861-4b83-9fb2-9d46585a229f
+principal_id: fc85ee85-695b-464c-9df3-c5e657da1df4

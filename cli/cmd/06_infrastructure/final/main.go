@@ -159,6 +159,7 @@ func deployTerraformProject(hq hq.HQ, environment string, appName string) error 
 
 	clientId := viper.GetString(constants.ClientId)
 	clientSecret := viper.GetString(constants.ClientSecret)
+	principalId := viper.GetString(constants.PrincipalId)
 
 	// 1.3 set variables
 	err = tf.SetVariables(map[string]any{
@@ -169,6 +170,7 @@ func deployTerraformProject(hq hq.HQ, environment string, appName string) error 
 		"subscription_id": subscription,
 		"client_id":       clientId,
 		"client_secret":   clientSecret,
+		"pricipal_id":     principalId,
 		// resource names
 		"resource_group_name":  appResourceGroupName,
 		"storage_account_name": appStorageAccountName,

@@ -1,14 +1,17 @@
-cluster: cpone
-cluster_connection_string_secret: ENC[AES256_GCM,data:NxKL4EKWLdcXzOH1MHmoiwIaXXrvbYFLRuiKxgA8IEFPSQBFjhVy36OijjeamwXveAlI8YI1fkaSKeGBbiEWH3tb0ErN4G6leXX8ooO6gvPikWZYoIRuW+0NJRxUD63Mgj7DpaxlTsTFlXO22oSnmhXDrNNfCIROfJryEAM23ZL4yuYwbrSbFeBkFKUGRcuva9d4h45TiNBXirsFmWLUD41OwOawRy2pmBROjcSc0VOptPxGAo0P,iv:xFPGJvONXB0fD3v+bvW8bS9iEn+Edhe0RnL6sJpH1VE=,tag:yLBi9z1iXM4NXsR8/WhZLg==,type:str]
 users: 455e71ab-2049-48b3-83d1-4c07dca43eff
+cluster_connection_string_secret: ENC[AES256_GCM,data:NxKL4EKWLdcXzOH1MHmoiwIaXXrvbYFLRuiKxgA8IEFPSQBFjhVy36OijjeamwXveAlI8YI1fkaSKeGBbiEWH3tb0ErN4G6leXX8ooO6gvPikWZYoIRuW+0NJRxUD63Mgj7DpaxlTsTFlXO22oSnmhXDrNNfCIROfJryEAM23ZL4yuYwbrSbFeBkFKUGRcuva9d4h45TiNBXirsFmWLUD41OwOawRy2pmBROjcSc0VOptPxGAo0P,iv:xFPGJvONXB0fD3v+bvW8bS9iEn+Edhe0RnL6sJpH1VE=,tag:yLBi9z1iXM4NXsR8/WhZLg==,type:str]
+client_secret: ENC[AES256_GCM,data:b9EeMBrKpDAAL2uOM/aqXYYpRNKMsjjqGZ6X9PR+KwGye6RRmzlBYw==,iv:pt3Hl0UhH690NK4Gti2uuN60U0u0i4Ny2Q+Gv5E3eTU=,tag:N/TOHqP7519E4yMU7jdKMQ==,type:str]
+##
+cluster: cpone
 appName: cp-notes
 ## infrastructure
-client_id: 9e490497-2861-4b83-9fb2-9d46585a229f
-client_secret: ENC[AES256_GCM,data:b9EeMBrKpDAAL2uOM/aqXYYpRNKMsjjqGZ6X9PR+KwGye6RRmzlBYw==,iv:pt3Hl0UhH690NK4Gti2uuN60U0u0i4Ny2Q+Gv5E3eTU=,tag:N/TOHqP7519E4yMU7jdKMQ==,type:str]
 subscription: aee5732d-1f42-49c8-a38d-688bd0f6d146
 tenant: 87144109-3f73-4a26-87b5-8cb7a3c3425e
 region_long: westeurope
 region_short: weu
+## service principal
+client_id: 9e490497-2861-4b83-9fb2-9d46585a229f
+principal_id: fc85ee85-695b-464c-9df3-c5e657da1df4
 sops:
     azure_kv:
         - vault_url: https://workshop-cp-kv.vault.azure.net
@@ -16,7 +19,7 @@ sops:
           version: 6daf9fd6121a443ebe0ce86e03a19737
           created_at: "2025-04-14T09:06:04Z"
           enc: CoABa7AlaCJJhapnMclsllCC-ELlEdnvUO8XKqTP_8cmSALz3cEO6yNLSmBpbu7Jeo40WlfaDY1lfn51aT0HMpc82u0hs46ZWKqawuTFlSdJoLGiYAGadr5sAx2rvLQTg1kqqkgC6IVq697nw0nyXVsrpQGX9pz7IBbRpYENEV39SZg3wNomHXjeEXOsloZV9jgHRJkTdI6W7pfqpX2O0PvZRwijY7vOkqtnyg-ZSQAGypHJYA-_rdZ3SJuPEMo7AzJjXSd2hNRFey19w2TZkT7w6y8LwsKUKMHTFOYuxDcBJ4DscBWn43S6CMSs1hOdkQsDYYmEw-XBszEekam1Zg
-    lastmodified: "2025-05-19T10:04:23Z"
-    mac: ENC[AES256_GCM,data:CG5/KVCrisU4sPztghIwcFfGlpIchWD3zMrB8n3PXb2NPce42f11w0NJYOJpYG8sHuOqF2Mkl4ZGOUJGUgqmEsVLxx2zEfxb4Plh9qQaPKMbHiE25msNmgdZeywDaYCuAJeSNGRs53jLMvfZXR1hKWGN80bXyIk2XiOpUXbRpaQ=,iv:jLV4ndpOQhBeHbwKWrK7PK8CtyS0e7AfajBjsecSKo8=,tag:XmJKodPkwBbTKvoX4/CZyw==,type:str]
+    lastmodified: "2025-05-20T10:59:03Z"
+    mac: ENC[AES256_GCM,data:ns57iifNZ8/8stDzIbEvWQKhfkyI5WDQJ+eWz15vbMzx5AUc5gDZYTZ8xxAOgNPdPiS2L9Sn5Kj1/uEqm78dxdNllDMcXBiJCxGwi7wKdJLwf/7okLUiUu3khmQp+u9y0tqD6jANzzAJi9VEh0YPdhLV4WfhF3C5bWA5PCMReqw=,iv:pM8dHWiBA0BGY2QNDTkNAtPDD6C5gjrmOyk8Z4D2z+U=,tag:lDyZO87ylfEWkLBArGLUPg==,type:str]
     encrypted_regex: .*_secret|.*_key
     version: 3.10.1

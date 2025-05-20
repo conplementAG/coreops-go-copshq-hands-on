@@ -103,8 +103,9 @@ func (s *Service) prepareTerraformProject() (terraform.Terraform, error) {
 		return nil, err
 	}
 
-	clientId := viper.GetString("client_id")
-	clientSecret := viper.GetString("client_secret")
+	clientId := viper.GetString(constants.ClientId)
+	clientSecret := viper.GetString(constants.ClientSecret)
+	principalId := viper.GetString(constants.PrincipalId)
 
 	// 1.2 set variables
 	err = tf.SetVariables(map[string]any{
@@ -115,6 +116,7 @@ func (s *Service) prepareTerraformProject() (terraform.Terraform, error) {
 		"subscription_id": subscription,
 		"client_id":       clientId,
 		"client_secret":   clientSecret,
+		"principal_id":    principalId,
 		// resource names
 		"resource_group_name":  appResourceGroupName,
 		"storage_account_name": appStorageAccountName,

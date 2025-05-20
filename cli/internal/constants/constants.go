@@ -15,6 +15,7 @@ const (
 	// Infrastructure
 	ClientId        = "client_id"
 	ClientSecret    = "client_secret"
+	PrincipalId     = "principal_id"
 	UseExistingPlan = "use-existing-plan"
 	PlanOnly        = "plan-only"
 	RegionLong      = "region_long"

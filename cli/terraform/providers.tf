@@ -24,7 +24,3 @@ provider "azurerm" {
     }
   }
 }
-
-data "azuread_service_principal" "iac-automation-principal" {
-  client_id = var.client_id
-}

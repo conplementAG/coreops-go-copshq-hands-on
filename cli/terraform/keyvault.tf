@@ -15,5 +15,5 @@ resource "azurerm_key_vault" "app-keyvault" {
 resource "azurerm_role_assignment" "keyvault-admin" {
   scope                = azurerm_key_vault.app-keyvault.id
   role_definition_name = "Key Vault Administrator"
-  principal_id         = data.azuread_service_principal.iac-automation-principal.object_id
+  principal_id         = var.principal_id
 }
