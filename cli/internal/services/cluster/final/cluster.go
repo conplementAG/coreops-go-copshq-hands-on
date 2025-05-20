@@ -45,13 +45,13 @@ func (s *Service) CreateNamespace() error {
 
 	// coreOpsMandatoryTechnicalAccount := info.TechnicalAccountName + "." + info.TechnicalAccountNamespace
 
-	appName := viper.GetString(constants.AppName)
+	// appName := viper.GetString(constants.AppName)
 	environmentTag := viper.GetString(constants.EnvironmentTag)
 	name := fmt.Sprintf("ws-%s", environmentTag)
 
 	logrus.Info("Creating namespace " + name)
-	_, err := s.executor.Execute(fmt.Sprintf("copsctl namespace create -n %s -u %s -n %s -c cp-workshop -p cp-workshop",
-		name, namespaceAdminUsers, appName))
+	_, err := s.executor.Execute(fmt.Sprintf("copsctl namespace create -n %s -u %s -c cp-workshop -p cp-workshop",
+		name, namespaceAdminUsers))
 
 	return err
 }
